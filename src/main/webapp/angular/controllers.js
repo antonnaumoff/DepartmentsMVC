@@ -10,8 +10,8 @@ myApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: "template/employeeList.html",
             controller: 'EmployeeListController'
         }).when('/logout', {
-            templateUrl: "/template/loginForm.html"/*,*/
-        /*    controller: 'MainController'*/
+            templateUrl: "/template/loginForm.html"
+
         })
 }]);
 

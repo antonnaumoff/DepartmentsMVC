@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>Departments</groupId>
-    <artifactId>DepartmentsMVC</artifactId>
+    <artifactId>DepartmentsMVC </artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Departments MVC Maven Webapp</name>
