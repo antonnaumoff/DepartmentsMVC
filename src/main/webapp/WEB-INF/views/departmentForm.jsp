@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="<c:url value="/css/my.css"/>" type="text/css">
 </head>
-<body>
+<body ng-app = appControllers>
 <div class="container">
     <div class="row">
         <div class="col-sm-2"></div>
@@ -37,7 +37,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <form action="${pageContext.request.contextPath}/logout.html"
+                  method="get">
+                <button type="submit" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-off"></span>
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 </div>

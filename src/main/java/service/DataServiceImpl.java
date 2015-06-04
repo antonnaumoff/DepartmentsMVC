@@ -2,16 +2,17 @@ package service;
 
 import models.Department;
 import models.Employee;
+import models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import repository.AuthorizationRepository;
 import repository.DepartmentRepository;
 import repository.EmployeeRepository;
 import utils.exceptions.DataBaseException;
 
-import java.sql.Date;
 import java.util.List;
 
 @Component
@@ -25,6 +26,11 @@ public class DataServiceImpl implements DataService {
     @Autowired
     @Qualifier("hibernateEmployeeRepository")
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    @Qualifier("hibernateAuthorizationRepository")
+    private AuthorizationRepository authorizationRepository;
+
 
     @Override
     @Transactional(readOnly = true)
@@ -83,4 +89,20 @@ public class DataServiceImpl implements DataService {
     public Integer getId_dById(Integer id) throws DataBaseException {
         return employeeRepository.getId_dById(id);
     }
+
+    @Transactional(readOnly = true)
+    public List<User> getAllUsers() throws DataBaseException {
+        return authorizationRepository.getAllUsers();
+    }
+
+    @Transactional(readOnly = true)
+    public User getUserByUsername(String userName) throws DataBaseException {
+        return authorizationRepository.getUserByUsername(userName);
+    }
+
+    @Transactional(readOnly = true)
+    public String getPermissionByRoleId(Integer role_id) throws DataBaseException {
+        return authorizationRepository.getPermissionByRoleId(role_id);
+    }
 }
+

@@ -1,13 +1,10 @@
 package utils.validators;
 
-import net.sf.oval.Validator;
 import net.sf.oval.ConstraintViolation;
+import net.sf.oval.Validator;
 import net.sf.oval.context.FieldContext;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import utils.forms.Form;
 
 import java.util.List;
@@ -15,8 +12,8 @@ import java.util.List;
 @Component
 public class OvalFormValidator implements org.springframework.validation.Validator {
 
-    @Autowired
-    private Validator validator;
+
+    private Validator validator = new Validator();
 
     public boolean supports(Class<?> clazz) {
         return Form.class.isAssignableFrom(clazz);

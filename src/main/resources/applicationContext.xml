@@ -27,7 +27,7 @@
 
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/departments"/>
         <property name="username" value="root"/>
         <property name="password" value="1"/>
 
@@ -39,6 +39,8 @@
             <list>
                 <value>models.Department</value>
                 <value>models.Employee</value>
+                <value>models.Role</value>
+                <value>models.User</value>
             </list>
         </property>
         <property name="hibernateProperties">

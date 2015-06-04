@@ -5,15 +5,19 @@
 <head>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="<c:url value="/css/my.css"/>" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js" type="application/javascript"></script>
+    <script src="/js/controller.js"></script>
 </head>
 <body>
 
-<div class="container">
+<div class="container"  ng-app="myApp">
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+        <div class="col-sm-8" ng-controller="ViewController">
             <div class="panel panel-primary">
-                <div class="panel-heading"><div class="custom">Employee List</div></div>
+                <div class="panel-heading">
+                    <div class="custom">Employee List</div>
+                </div>
                 <table class="table-striped">
                     <thead>
                     <tr class="table-header">
@@ -23,7 +27,8 @@
                         <td>Salary</td>
                         <td>Date</td>
                         <td class="my-table-cell3">
-                            <form action="${pageContext.request.contextPath}/employees/employeeFormHandlerForCreation.html" method="get">
+                            <form ng-show="permission.edit=='true'"action="${pageContext.request.contextPath}/employees/employeeFormHandlerForCreation.html"
+                                  method="get">
                                 <input type="hidden" name="id_dep" value="${id_dep}"/>
                                 <button type="submit" class="btn btn-default btn-lg">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -54,7 +59,7 @@
                             <td><c:out value="${emp.date}"/></td>
 
                             <td class="my-table-cell3">
-                                <form action="${pageContext.request.contextPath}/employees/employeeDeleting.html"
+                                <form ng-show="permission.delete=='true'" action="${pageContext.request.contextPath}/employees/employeeDeleting.html"
                                       method="post">
                                     <input type="hidden" name="id" value="${emp.id}"/>
                                     <input type="hidden" name="id_dep" value="${id_dep}">
@@ -65,7 +70,8 @@
                             </td>
 
                             <td class="my-table-cell3">
-                                <form action="${pageContext.request.contextPath}/employees/employeeFormHandlerForEditing.html" method="get">
+                                <form ng-show="permission.edit=='true'" action="${pageContext.request.contextPath}/employees/employeeFormHandlerForEditing.html"
+                                      method="get">
                                     <input type="hidden" name="id" value="${emp.id}"/>
                                     <button type="submit" class="btn btn-default btn-lg">
                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -80,7 +86,14 @@
                 </table>
             </div>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <form action="${pageContext.request.contextPath}/logout.html"
+                  method="get">
+                <button type="submit" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-off"></span>
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 </div>

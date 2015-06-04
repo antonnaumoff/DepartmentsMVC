@@ -1,0 +1,67 @@
+<div class="container" ng-controller="DepartmentListController">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="custom">Departments List</div>
+                </div>
+
+                <table class="table-striped">
+                    <thead>
+                    <tr class="table-header">
+                        <td>Title</td>
+                        <td class="my-table-cell3"></td>
+                        <td class="my-table-cell3"></td>
+                        <td class="my-table-cell3">
+                            <div ng-show="permission.edit=='true'">
+                                <button ng-click="createDepartment()" class="btn btn-default btn-lg">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    <tr class="my-table-cell" ng-repeat="dep in departments">
+                        <td>{{dep.title}}</td>
+
+                        <td class="my-table-cell3">
+                            <div ng-show="permission.delete=='true'">
+                                <button ng-click="deleting(dep.id)" class="btn btn-default btn-lg">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="my-table-cell3">
+                            <div ng-show="permission.edit=='true'">
+                                <button ng-click="editing(dep.id)" class="btn btn-default btn-lg">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </div>
+
+                        </td>
+
+                        <td class="my-table-cell3">
+                            <div>
+                                <button ng-click="employeeList(dep.id)" class="btn btn-default btn-lg">
+                                    <span class="glyphicon glyphicon-th-list"></span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div>
+                <button  ng-click="logout()" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-off"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

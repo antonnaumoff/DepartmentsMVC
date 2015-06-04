@@ -2,6 +2,7 @@ package service;
 
 import models.Department;
 import models.Employee;
+import models.User;
 import utils.exceptions.DataBaseException;
 
 import java.util.List;
@@ -30,4 +31,9 @@ public interface DataService {
 
     Integer getId_dById(Integer id) throws DataBaseException;
 
+    public List<User> getAllUsers() throws DataBaseException;
+
+    User getUserByUsername(String userName) throws DataBaseException;
+
+    public String getPermissionByRoleId(Integer role_id) throws DataBaseException;
 }

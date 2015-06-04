@@ -2,7 +2,6 @@ package models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
 
 
 @Entity
@@ -11,7 +10,7 @@ import java.util.Set;
 public class Department implements Serializable {
 
     @Id
-    @Column(name = "idDepartment")
+    @Column(name = "department_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Integer id;
@@ -20,8 +19,8 @@ public class Department implements Serializable {
 
     private String title;
 
-    @OneToMany(mappedBy = "department", cascade=CascadeType.ALL)
-    private Set<Employee> employees;
+//    @OneToMany(mappedBy = "department"/* cascade=CascadeType.ALL*/)
+//    private Set<Employee> employees;
 
     public int getId() {
         return id;
@@ -38,14 +37,14 @@ public class Department implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public Set<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(Set<Employee> employees) {
-        this.employees = employees;
-    }
+//
+//    public Set<Employee> getEmployees() {
+//        return employees;
+//    }
+//
+//    public void setEmployees(Set<Employee> employees) {
+//        this.employees = employees;
+//    }
 
     @Override
     public boolean equals(Object o) {

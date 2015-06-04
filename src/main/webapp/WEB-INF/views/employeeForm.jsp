@@ -71,7 +71,14 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <form action="${pageContext.request.contextPath}/logout.html"
+                  method="get">
+                <button type="submit" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-off"></span>
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 </div>

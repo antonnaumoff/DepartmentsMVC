@@ -4,6 +4,14 @@ div.custom {
     font-size: x-large;
 }
 
+input.ng-invalid{
+    border: 1px solid red;
+}
+
+input.ng-valid{
+    border: 1px solid green;
+}
+
 .table-header > td{
     padding: 10px;
     font-weight: bold;
