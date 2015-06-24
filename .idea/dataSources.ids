@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="bcb3fe18-eb43-4d46-8909-8fb91e51ed20">
+    <database-info product="MySQL" version="5.5.43-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="departments"/>
+    <table name="Department" schema="" catalog="departments" type="TABLE">
+      <column name="idDepartment" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idDepartment"/>
+      <foreign-key name="fk_Department_1" columns="idDepartment" ref-table="Employee" ref-schema="" ref-catalog="departments" ref-columns="id_dep" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="fk_Employee_1" table="Employee" schema="" catalog="departments" columns="id_dep"/>
+    </table>
+    <table name="Employee" schema="" catalog="departments" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_dep" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="second_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="salary" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="fk_Employee_1" columns="id_dep" ref-table="Department" ref-schema="" ref-catalog="departments" ref-columns="idDepartment" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="fk_Department_1" table="Department" schema="" catalog="departments" columns="idDepartment"/>
+      <index name="fk_Employee_1_idx" unique="false" columns="id_dep"/>
+    </table>
+    <table name="Role" schema="" catalog="departments" type="TABLE">
+      <column name="idRoles" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="permission" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idRoles"/>
+      <exported-key name="fk_Users_1" table="User" schema="" catalog="departments" columns="role_id"/>
+    </table>
+    <table name="User" schema="" catalog="departments" type="TABLE">
+      <column name="idUsers" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="userName" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="role_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idUsers"/>
+      <foreign-key name="fk_Users_1" columns="role_id" ref-table="Role" ref-schema="" ref-catalog="departments" ref-columns="idRoles" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_Users_1_idx" unique="false" columns="role_id"/>
+    </table>
+  </data-source>
+</component>

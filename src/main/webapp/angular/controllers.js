@@ -15,7 +15,9 @@ myApp.config(['$routeProvider', function ($routeProvider) {
         })
 }]);
 
-myApp.controller("MainController", ['$scope', '$http', '$location', function ($scope, $http, $location) {
+myApp.controller("MainController", ['$scope', '$http', '$location','$log',  function ($scope, $http, $location, logger) {
+
+    logger.debug('Hello');
 
     $scope.permission = {};
 
