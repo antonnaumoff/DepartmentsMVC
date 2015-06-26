@@ -1,6 +1,8 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'restangular']);
 
 myApp.config(['$routeProvider', function ($routeProvider) {
+
+
     $routeProvider
         .when('/departmentList', {
             templateUrl: "/template/departmentList.html",
@@ -12,10 +14,13 @@ myApp.config(['$routeProvider', function ($routeProvider) {
         }).when('/logout', {
             templateUrl: "/template/loginForm.html"
 
+        }).when('/restPractices', {
+            templateUrl: "template/restPractices.html",
+            controller: "RESTController"
         })
 }]);
 
-myApp.controller("MainController", ['$scope', '$http', '$location','$log',  function ($scope, $http, $location, logger) {
+myApp.controller("MainController", ['$scope', '$http', '$location', '$log', function ($scope, $http, $location, logger) {
 
     logger.debug('Hello');
 
@@ -56,7 +61,7 @@ myApp.controller("MainController", ['$scope', '$http', '$location','$log',  func
             });
     };
 
-    $scope.logout = function(){
+    $scope.logout = function () {
         $scope.permission = {};
         $location.path("/logout");
     }
@@ -92,11 +97,15 @@ myApp.controller("DepartmentListController", ['$scope', '$http', '$location', '$
 
     $scope.createDepartment = function () {
         alert("Create new Department");
-    }
+    };
+
+    $scope.practices = function () {
+        $location.path("/restPractices");
+    };
 
 }]);
 
-myApp.controller("EmployeeListController", ['$scope', '$http', '$location','$rootScope', function ($scope, $http, $location, $rootScope) {
+myApp.controller("EmployeeListController", ['$scope', '$http', '$location', '$rootScope', function ($scope, $http, $location, $rootScope) {
 
     $scope.employees = {};
 
@@ -112,22 +121,98 @@ myApp.controller("EmployeeListController", ['$scope', '$http', '$location','$roo
             alert("server is under reconstruction, try later");
         });
 
-    $scope.departmentList = function(){
+    $scope.departmentList = function () {
         $rootScope.dep_id = 0;
         $location.path("/departmentList");
     };
 
-    $scope.createEmployee = function(dep_id){
+    $scope.createEmployee = function (dep_id) {
         alert("Creating new Employee" + dep_id);
     };
 
-    $scope.editing = function( id){
+    $scope.editing = function (id) {
         alert("Editing Employee" + id);
     };
 
-    $scope.deleting = function(id, dep_id){
-        alert("Deleting Employee " + id+"in Department with id " + dep_id);
+    $scope.deleting = function (id, dep_id) {
+        alert("Deleting Employee " + id + "in Department with id " + dep_id);
     };
+
+}]);
+
+myApp.factory('DepartmentService', function (Restangular) {
+    var dao = Restangular.withConfig(function (RestangularConfigurer) {
+        RestangularConfigurer.setBaseUrl("/rest");
+    });
+
+
+    return {
+
+        getAll: function () {
+            return dao.all('departments').getList().then(function (departments) {
+                angular.forEach(departments, function (department) {
+                    console.log(department);
+                });
+
+            });
+        },
+
+        getById: function (id) {
+            return dao.one('departments', id).get().then(function (department) {
+                console.log(department);
+            });
+        },
+
+        /*  author.customPOST({body: "Ari's Bio"}, // post body
+         "biography",  // route
+         {},           // custom params
+         {});          // custom headers*/
+        //TODO customPOST
+
+        create: function (title) {
+
+            var headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+            return dao.all('').customPOST('title=' + title, 'departments', undefined, headers);
+        },
+
+        edit: function (id, title) {
+
+            var headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+            return dao.all('').customPUT({'title': title, 'id': id}, 'departments', undefined, headers);
+        },
+
+        delete: function (id) {
+            return dao.one('departments', id).remove();
+        }
+    }
+});
+
+myApp.controller("RESTController", ['$scope', '$http', '$location', '$rootScope', 'DepartmentService', function ($scope, $http, $location, $rootScope, DepartmentService) {
+
+    $scope.id = '';
+
+    $scope.title = "Basic";
+
+    $scope.getAll = function () {
+        return DepartmentService.getAll();
+    };
+
+    $scope.getById = function (id) {
+        return DepartmentService.getById(id);
+    };
+
+    $scope.create = function () {
+        return DepartmentService.create($scope.title)
+    };
+
+    $scope.delete = function (id) {
+        return DepartmentService.delete(id);
+    };
+
+    $scope.edit = function () {
+        return DepartmentService.edit($scope.id, $scope.title);
+    }
+
 
 }]);
 

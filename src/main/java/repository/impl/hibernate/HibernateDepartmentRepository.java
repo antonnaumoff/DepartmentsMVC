@@ -52,7 +52,7 @@ public class HibernateDepartmentRepository implements DepartmentRepository {
     public Department getDepartmentById(int id) throws DataBaseException {
 
             Session  session = sessionFactory.getCurrentSession();
-            String hql = "from Department where idDepartment=:id";
+            String hql = "from Department where department_id=:id";
             Query q = session.createQuery(hql);
             q.setParameter("id", id);
 
@@ -63,7 +63,7 @@ public class HibernateDepartmentRepository implements DepartmentRepository {
     public void editDepartment(String test, int id) throws DataBaseException {
 
             Session session = sessionFactory.getCurrentSession();
-            String hql = "UPDATE Department SET title =:test WHERE idDepartment =:id";
+            String hql = "UPDATE Department SET title =:test WHERE department_id =:id";
             Query q = session.createQuery(hql);
             q.setParameter("test", test);
             q.setParameter("id", id);

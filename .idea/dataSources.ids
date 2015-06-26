@@ -8,10 +8,9 @@
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
     <schema name="" catalog="departments"/>
     <table name="Department" schema="" catalog="departments" type="TABLE">
-      <column name="idDepartment" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="department_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="title" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="idDepartment"/>
-      <foreign-key name="fk_Department_1" columns="idDepartment" ref-table="Employee" ref-schema="" ref-catalog="departments" ref-columns="id_dep" update-rule="0" delete-rule="0" deferrability="2"/>
+      <primary-key name="PRIMARY" columns="department_id"/>
       <exported-key name="fk_Employee_1" table="Employee" schema="" catalog="departments" columns="id_dep"/>
     </table>
     <table name="Employee" schema="" catalog="departments" type="TABLE">
@@ -23,8 +22,7 @@
       <column name="salary" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="fk_Employee_1" columns="id_dep" ref-table="Department" ref-schema="" ref-catalog="departments" ref-columns="idDepartment" update-rule="0" delete-rule="0" deferrability="2"/>
-      <exported-key name="fk_Department_1" table="Department" schema="" catalog="departments" columns="idDepartment"/>
+      <foreign-key name="fk_Employee_1" columns="id_dep" ref-table="Department" ref-schema="" ref-catalog="departments" ref-columns="department_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="fk_Employee_1_idx" unique="false" columns="id_dep"/>
     </table>
     <table name="Role" schema="" catalog="departments" type="TABLE">
