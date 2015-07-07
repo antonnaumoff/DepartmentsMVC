@@ -16,7 +16,6 @@ import utils.exceptions.DataBaseException;
 import utils.forms.DepartmentForm;
 import utils.validators.OvalFormValidator;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -33,7 +32,7 @@ public class DepartmentController {
     private OvalFormValidator validator;
 
     @RequestMapping(value = "/list.html", method = RequestMethod.GET)
-    public String initDepartmentList(HttpServletRequest httpRequest, ModelMap model) throws DataBaseException {
+    public String initDepartmentList(ModelMap model) throws DataBaseException {
         List departments = dataService.getDepartmentList();
         model.put("department", departments);
         return "departmentList";
@@ -58,7 +57,7 @@ public class DepartmentController {
     }
 
     @RequestMapping("/edit.html")
-    String editDepartment(@RequestParam("id") int id, ModelMap model) throws DataBaseException {
+    String editDepartment(int id, ModelMap model) throws DataBaseException {
         String title = dataService.getDepartmentById(id).getTitle();
         DepartmentForm depForm = new DepartmentForm();
         model.put("departmentForm", depForm);

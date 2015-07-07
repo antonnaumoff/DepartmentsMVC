@@ -24,9 +24,9 @@
 
 
                             <label for="title">Title:</label>
-                            <form:input path="title" type="text" class="form-control" id="title" name="title"
+                            <form:input path="title" type="text" class="form-control" name="title"
                                         value='${title}'/>
-                            <form:input path="id_dep" type="hidden" id="id_dep" name="id_dep" value="${id_dep}"/>
+                            <form:input path="id_dep" type="hidden" name="id_dep" value="${id_dep}"/>
                             <span class="alarma"><form:errors path="title"/></span>
 
                         </div>
@@ -39,7 +39,6 @@
         </div>
         <div class="col-sm-2"></div>
     </div>
-</div>
 </div>
 </body>
 </html>
