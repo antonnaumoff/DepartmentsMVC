@@ -6,13 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import service.DataService;
 import utils.exceptions.DataBaseException;
 import utils.forms.DepartmentForm;
 import utils.validators.OvalFormValidator;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -29,7 +33,7 @@ public class DepartmentController {
     private OvalFormValidator validator;
 
     @RequestMapping(value = "/list.html", method = RequestMethod.GET)
-    public String initDepartmentList(ModelMap model) throws DataBaseException {
+    public String initDepartmentList(HttpServletRequest httpRequest, ModelMap model) throws DataBaseException {
         List departments = dataService.getDepartmentList();
         model.put("department", departments);
         return "departmentList";
