@@ -10,14 +10,17 @@
 
     <security:http pattern="/login.jsp*" security="none"/>
 
-    <security:http auto-config="true" use-expressions="true">
+    <security:http auto-config="false" use-expressions="true">
         <security:intercept-url pattern="/login.jsp" access="permitAll"/>
         <secutiry:intercept-url pattern="/**" access="isAuthenticated()"/>
         <security:form-login login-page="/login.jsp"
                              login-processing-url="/login"
                              default-target-url="/departments/list.html"
                              always-use-default-target='true'/>
-        <security:logout logout-url="/logout"/>
+        <security:logout logout-url="/logout" delete-cookies="JSESSIONID"/>
+        <security:session-management invalid-session-url="/login.jsp" session-fixation-protection="newSession">
+            <security:concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
+        </security:session-management>
     </security:http>
 
     <security:user-service id="userService">

@@ -6,7 +6,6 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<c:url value="/css/my.css"/>" type="text/css">
-    <script defer src="/js/alert.js"></script>
 </head>
 <body>
 
@@ -78,7 +77,9 @@
             </div>
         </div>
         <div class="col-sm-2">
-            <form action="/logout"><button type="submit" class="btn btn-primary">Logout</button></form>
+            <form action="/logout">
+                <button type="submit" class="btn btn-primary">Logout</button>
+            </form>
         </div>
 
     </div>
