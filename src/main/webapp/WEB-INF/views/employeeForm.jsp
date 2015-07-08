@@ -71,9 +71,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <form action="/logout"><button type="submit" class="btn btn-primary">Logout</button></form>
+        </div>
     </div>
-</div>
 </div>
 </body>
 </html>

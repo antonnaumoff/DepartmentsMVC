@@ -13,7 +13,9 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
             <div class="panel panel-primary">
-                <div class="panel-heading"><div class="custom">Employee List</div></div>
+                <div class="panel-heading">
+                    <div class="custom">Employee List</div>
+                </div>
                 <table class="table-striped">
                     <thead>
                     <tr class="table-header">
@@ -23,7 +25,8 @@
                         <td>Salary</td>
                         <td>Date</td>
                         <td class="my-table-cell3">
-                            <form action="${pageContext.request.contextPath}/employees/employeeFormHandlerForCreation.html" method="get">
+                            <form action="${pageContext.request.contextPath}/employees/employeeFormHandlerForCreation.html"
+                                  method="get">
                                 <input type="hidden" name="id_dep" value="${id_dep}"/>
                                 <button type="submit" class="btn btn-default btn-lg">
                                     <span class="glyphicon glyphicon-plus"></span>
@@ -65,7 +68,8 @@
                             </td>
 
                             <td class="my-table-cell3">
-                                <form action="${pageContext.request.contextPath}/employees/employeeFormHandlerForEditing.html" method="get">
+                                <form action="${pageContext.request.contextPath}/employees/employeeFormHandlerForEditing.html"
+                                      method="get">
                                     <input type="hidden" name="id" value="${emp.id}"/>
                                     <button type="submit" class="btn btn-default btn-lg">
                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -80,10 +84,14 @@
                 </table>
             </div>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <form action="/logout">
+                <button type="submit" class="btn btn-primary">Logout</button>
+            </form>
+        </div>
     </div>
 </div>
-</div>
+
 </body>
 
 
