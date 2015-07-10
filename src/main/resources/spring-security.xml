@@ -29,9 +29,19 @@
         <security:user name="user2" password="user2" authorities="ROLE_USER"/>
     </security:user-service>
 
+
+
     <security:authentication-manager>
-        <security:authentication-provider user-service-ref="userService"/>
+        <!--<security:authentication-provider user-service-ref="userService"/>-->
+        <security:authentication-provider>
+            <security:jdbc-user-service data-source-ref="myDataSource"
+
+                                        authorities-by-username-query="select username, role from user_roles where username =?  "
+
+                                        users-by-username-query="select username,password, enabled from users where username=?"/>
+        </security:authentication-provider>
     </security:authentication-manager>
+
 
     <bean id="securityContextHolder" class="org.springframework.security.core.context.SecurityContextHolder"/>
 
