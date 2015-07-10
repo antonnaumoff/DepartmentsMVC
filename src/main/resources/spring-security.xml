@@ -30,7 +30,6 @@
     </security:user-service>
 
 
-
     <security:authentication-manager>
         <!--<security:authentication-provider user-service-ref="userService"/>-->
         <security:authentication-provider>

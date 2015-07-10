@@ -1,5 +1,6 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="<c:url value="/css/my.css"/>" type="text/css">
 </head>
 <body>
-
+<security:authentication property="principal.username" var="loginId" scope="session"/>
 <div class="container">
     <div class="row">
         <div class="col-sm-2"></div>
@@ -43,21 +44,32 @@
                         <tr class="my-table-cell">
                             <td><c:out value="${dep.title}"/></td>
 
+
                             <td class="my-table-cell3">
-                                <form action="${pageContext.request.contextPath}/departments/delete.html" method="post">
-                                    <input type="hidden" name="id" value="${dep.id}"/>
-                                    <button type="submit" class="btn btn-default btn-lg">
-                                        <span class="glyphicon glyphicon-remove"></span>
-                                    </button>
-                                </form>
+                                <security:authorize
+                                        access="hasRole('ROLE_ADMIN')">
+                                    <form action="${pageContext.request.contextPath}/departments/delete.html"
+                                          method="post">
+                                        <input type="hidden" name="id" value="${dep.id}"/>
+                                        <button type="submit" class="btn btn-default btn-lg">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                    </form>
+                                </security:authorize>
                             </td>
+
+
                             <td class="my-table-cell3">
-                                <form action="${pageContext.request.contextPath}/departments/edit.html" method="get">
-                                    <input type="hidden" name="id" value="${dep.id}"/>
-                                    <button type="submit" class="btn btn-default btn-lg">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </form>
+                                <security:authorize
+                                        access="hasRole('ROLE_ADMIN')">
+                                    <form action="${pageContext.request.contextPath}/departments/edit.html"
+                                          method="get">
+                                        <input type="hidden" name="id" value="${dep.id}"/>
+                                        <button type="submit" class="btn btn-default btn-lg">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </button>
+                                    </form>
+                                </security:authorize>
 
                             </td>
 
@@ -78,7 +90,7 @@
         </div>
         <div class="col-sm-2">
             <form action="/logout">
-                <button type="submit" class="btn btn-primary">Logout</button>
+                <button type="submit" class="btn btn-primary">Logout ${loginId}</button>
             </form>
         </div>
 

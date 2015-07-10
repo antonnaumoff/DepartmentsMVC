@@ -63,12 +63,12 @@
 
     <bean id="ovalValidator" class="net.sf.oval.Validator"/>
 
-    <jdbc:initialize-database data-source="myDataSource">
-        <jdbc:script location="classpath:db/department.sql"/>
-        <jdbc:script location="classpath:db/employee.sql"/>
-        <jdbc:script location="classpath:db/users.sql"/>
-        <jdbc:script location="classpath:db/users_roles.sql"/>
-    </jdbc:initialize-database>
+    <!--<jdbc:initialize-database data-source="myDataSource">-->
+        <!--<jdbc:script location="classpath:db/department.sql"/>-->
+        <!--<jdbc:script location="classpath:db/employee.sql"/>-->
+        <!--<jdbc:script location="classpath:db/users.sql"/>-->
+        <!--<jdbc:script location="classpath:db/users_roles.sql"/>-->
+    <!--</jdbc:initialize-database>-->
 
 </beans>
 

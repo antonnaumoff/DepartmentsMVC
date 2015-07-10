@@ -4,6 +4,7 @@ import models.Employee;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -39,6 +40,7 @@ public class EmployeeController {
         return "employeeList";
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/employeeFormHandlerForCreation.html")
     public String initEmployeeFormForCreation(@RequestParam("id_dep") Integer id_dep, ModelMap model) {
         EmployeeForm employeeForm = new EmployeeForm();
@@ -99,6 +101,7 @@ public class EmployeeController {
         }
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/employeeDeleting.html")
     public String deleteEmployee(@RequestParam("id") int id, @RequestParam("id_dep") int id_dep) throws Exception {
         dataService.deleteById(id);

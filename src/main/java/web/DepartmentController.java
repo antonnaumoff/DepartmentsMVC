@@ -3,6 +3,7 @@ package web;
 import models.Department;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -56,7 +57,7 @@ public class DepartmentController {
             return "redirect:/departments/list.html";
         }
     }
-
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/edit.html")
     String editDepartment(int id, ModelMap model) throws DataBaseException {
         String title = dataService.getDepartmentById(id).getTitle();
@@ -67,6 +68,7 @@ public class DepartmentController {
         return "departmentForm";
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/delete.html")
     public String deleteDepartment(@RequestParam("id") int id) throws DataBaseException {
         dataService.deleteDepartment(id);

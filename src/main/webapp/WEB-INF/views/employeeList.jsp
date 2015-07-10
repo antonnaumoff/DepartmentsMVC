@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -57,24 +58,30 @@
                             <td><c:out value="${emp.date}"/></td>
 
                             <td class="my-table-cell3">
-                                <form action="${pageContext.request.contextPath}/employees/employeeDeleting.html"
-                                      method="post">
-                                    <input type="hidden" name="id" value="${emp.id}"/>
-                                    <input type="hidden" name="id_dep" value="${id_dep}">
-                                    <button type="submit" class="btn btn-default btn-lg">
-                                        <span class="glyphicon glyphicon-remove"></span>
-                                    </button>
-                                </form>
+                                <security:authorize
+                                        access="hasRole('ROLE_ADMIN')">
+                                    <form action="${pageContext.request.contextPath}/employees/employeeDeleting.html"
+                                          method="post">
+                                        <input type="hidden" name="id" value="${emp.id}"/>
+                                        <input type="hidden" name="id_dep" value="${id_dep}">
+                                        <button type="submit" class="btn btn-default btn-lg">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                    </form>
+                                </security:authorize>
                             </td>
 
                             <td class="my-table-cell3">
-                                <form action="${pageContext.request.contextPath}/employees/employeeFormHandlerForEditing.html"
-                                      method="get">
-                                    <input type="hidden" name="id" value="${emp.id}"/>
-                                    <button type="submit" class="btn btn-default btn-lg">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                </form>
+                                <security:authorize
+                                        access="hasRole('ROLE_ADMIN')">
+                                    <form action="${pageContext.request.contextPath}/employees/employeeFormHandlerForEditing.html"
+                                          method="get">
+                                        <input type="hidden" name="id" value="${emp.id}"/>
+                                        <button type="submit" class="btn btn-default btn-lg">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </button>
+                                    </form>
+                                </security:authorize>
                             </td>
 
                         </tr>
@@ -86,7 +93,7 @@
         </div>
         <div class="col-sm-2">
             <form action="/logout">
-                <button type="submit" class="btn btn-primary">Logout</button>
+                <button type="submit" class="btn btn-primary">Logout ${loginId}</button>
             </form>
         </div>
     </div>
