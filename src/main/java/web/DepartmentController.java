@@ -3,7 +3,6 @@ package web;
 import models.Department;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -17,7 +16,6 @@ import utils.exceptions.DataBaseException;
 import utils.forms.DepartmentForm;
 import utils.validators.OvalFormValidator;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -33,11 +31,9 @@ public class DepartmentController {
     @Autowired
     private OvalFormValidator validator;
 
-    @Autowired
-    private SecurityContextHolder securityContextHolder;
 
     @RequestMapping(value = "/list.html", method = RequestMethod.GET)
-    public String initDepartmentList(ModelMap model, HttpServletRequest request) throws DataBaseException {
+    public String initDepartmentList(ModelMap model) throws DataBaseException {
         List departments = dataService.getDepartmentList();
         model.put("department", departments);
         return "departmentList";
