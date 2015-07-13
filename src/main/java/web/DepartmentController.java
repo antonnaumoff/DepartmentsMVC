@@ -37,6 +37,21 @@ public class DepartmentController {
     public String initDepartmentList(ModelMap model) throws DataBaseException {
         List departments = dataService.getDepartmentList();
         model.put("department", departments);
+
+
+        long startTime = System.currentTimeMillis();
+        int i;
+        for(i = 0; i < 10000; i++){
+            dataService.getDepartmentById(99);
+            dataService.getDepartmentById(100);
+            dataService.getDepartmentById(101);
+            dataService.getDepartmentById(109);
+            dataService.getDepartmentById(129);
+        }
+        logger.info("Get all employee: "
+                + (System.currentTimeMillis() - startTime)
+                + " ms.");
+
         return "departmentList";
     }
 
@@ -57,6 +72,7 @@ public class DepartmentController {
             return "redirect:/departments/list.html";
         }
     }
+
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping("/edit.html")
     String editDepartment(int id, ModelMap model) throws DataBaseException {
