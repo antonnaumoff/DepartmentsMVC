@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<c:url value="/css/my.css"/>" type="text/css">
 </head>
 <body>
-<security:authentication property="principal.username" var="loginId" scope="session"/>
+<security:authentication property="principal.username" var="loginId" scope="application"/>
 <div class="container">
     <div class="row">
         <div class="col-sm-2"></div>

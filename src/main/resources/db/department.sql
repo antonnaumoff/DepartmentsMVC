@@ -1,5 +1,4 @@
-DROP SCHEMA `security-departments`;
-CREATE SCHEMA IF NOT EXISTS `security-departments` ;
+CREATE SCHEMA IF NOT EXISTS `security-departments`;
 CREATE TABLE IF NOT EXISTS `security-departments`.`Department` (
   `department_id` INT(11)     NOT NULL AUTO_INCREMENT,
   `title`         VARCHAR(45) NOT NULL,

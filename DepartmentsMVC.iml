@@ -21,6 +21,7 @@
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/mvc-core-config.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/db/cashe-config.xml</file>
         </fileset>
       </configuration>
     </facet>

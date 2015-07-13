@@ -41,7 +41,4 @@
         </security:authentication-provider>
     </security:authentication-manager>
 
-
-    <bean id="securityContextHolder" class="org.springframework.security.core.context.SecurityContextHolder"/>
-
 </beans>
