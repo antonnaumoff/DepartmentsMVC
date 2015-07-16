@@ -31,12 +31,17 @@ public class HibernateDepartmentRepository implements DepartmentRepository {
     }
 
     @Override
-    public void createDepartment(String title) throws DataBaseException {
+    public Department createDepartment(String title) throws DataBaseException {
 
         Department dep = new Department();
         dep.setTitle(title);
         Session session = sessionFactory.getCurrentSession();
         session.save(dep);
+        String hql = "from Department where title=:title";
+        Query q = session.createQuery(hql);
+        q.setParameter("title", title);
+
+        return (Department) q.uniqueResult();
     }
 
     @Override

@@ -10,7 +10,7 @@ public interface DataService {
 
     List<Department> getDepartmentList() throws DataBaseException;
 
-    void createDepartment(String title) throws DataBaseException;
+    Department createDepartment(String title) throws DataBaseException;
 
     void deleteDepartment(int id) throws DataBaseException;
 

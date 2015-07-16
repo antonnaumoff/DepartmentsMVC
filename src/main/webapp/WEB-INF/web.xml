@@ -9,7 +9,8 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:applicationContext.xml, classpath:spring-security.xml, classpath:cache-config.xml</param-value>
+        <param-value>classpath:applicationContext.xml, classpath:spring-security.xml, classpath:cache-config.xml
+        </param-value>
     </context-param>
 
     <listener>
@@ -58,6 +59,5 @@
             org.springframework.security.web.session.HttpSessionEventPublisher
         </listener-class>
     </listener>
-
 
 </web-app>

@@ -57,7 +57,7 @@ public class JDBCDepartmentRepository implements DepartmentRepository {
         return result;
     }
 
-    public void createDepartment(String title) throws DataBaseException {
+    public Department createDepartment(String title) throws DataBaseException {
         Connection con = null;
         try {
             con = dataSource.getConnection();
@@ -78,6 +78,7 @@ public class JDBCDepartmentRepository implements DepartmentRepository {
                 e.printStackTrace();
             }
         }
+        return new Department();//TODO query with a real department
     }
 
     public void deleteDepartment(int id) throws DataBaseException {

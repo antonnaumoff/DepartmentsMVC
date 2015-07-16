@@ -1,10 +1,4 @@
-<ehcache
-        xsi:noNamespaceSchemaLocation="ehcache.xsd"
-        updateCheck="true"
-        monitoring="autodetect"
-        dynamicConfig="true"
-        maxBytesLocalHeap="150M"
-        >
+<ehcache>
     <diskStore path="java.io.tmpdir"/>
 
     <cache name="department"

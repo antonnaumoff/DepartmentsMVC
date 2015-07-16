@@ -8,19 +8,18 @@
        http://www.springframework.org/schema/security
        http://www.springframework.org/schema/security/spring-security.xsd">
 
-    <security:http pattern="/login.jsp*" security="none"/>
-
     <security:http auto-config="false" use-expressions="true">
-        <security:intercept-url pattern="/login.jsp" access="permitAll"/>
+        <security:intercept-url pattern="/login.jsp" access="permitAll" requires-channel="http"/>
         <secutiry:intercept-url pattern="/**" access="isAuthenticated()"/>
         <security:form-login login-page="/login.jsp"
                              login-processing-url="/login"
                              default-target-url="/departments/list.html"
                              always-use-default-target='true'/>
         <security:logout logout-url="/logout" delete-cookies="JSESSIONID"/>
-        <security:session-management invalid-session-url="/login.jsp" session-fixation-protection="newSession">
-            <security:concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
-        </security:session-management>
+        <security:remember-me key="myAppKey" user-service-ref="userService"/> <!--Using Cookie-->
+        <!--<security:session-management invalid-session-url="/login.jsp" session-fixation-protection="newSession">-->
+        <!--<security:concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>-->
+        <!--</security:session-management>-->
     </security:http>
 
     <security:user-service id="userService">
@@ -33,6 +32,7 @@
     <security:authentication-manager>
         <!--<security:authentication-provider user-service-ref="userService"/>-->
         <security:authentication-provider>
+            <security:password-encoder hash="plaintext"/>
             <security:jdbc-user-service data-source-ref="myDataSource"
 
                                         authorities-by-username-query="select username, role from user_roles where username =?  "
