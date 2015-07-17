@@ -1,5 +1,22 @@
 <ehcache>
-    <diskStore path="java.io.tmpdir"/>
+
+    <cache name="departments"
+           maxBytesLocalHeap="100M"
+           eternal="false"
+           timeToIdleSeconds="300"
+           overflowToDisk="true"
+           maxElementsOnDisk="1000000"
+           memoryStoreEvictionPolicy="LRU"/>
+
+    <cache name="employees"
+           maxBytesLocalHeap="40M"
+           eternal="false"
+           timeToIdleSeconds="300"
+           overflowToDisk="true"
+           maxEntriesLocalDisk="1000000"
+           diskPersistent="false"
+           diskExpiryThreadIntervalSeconds="120"
+           memoryStoreEvictionPolicy="LRU"/>
 
     <cache name="department"
            maxBytesLocalHeap="100M"

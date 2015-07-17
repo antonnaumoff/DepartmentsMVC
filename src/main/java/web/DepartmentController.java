@@ -94,8 +94,8 @@ public class DepartmentController {
         return dep;
     }
 
-    @ExceptionHandler(DataBaseException.class)
-    public ModelAndView handleDataBaseException(DataBaseException e) {
+    @ExceptionHandler(Exception.class)
+    public ModelAndView handleDataBaseException(Exception e) {
         ModelAndView modelAndView = new ModelAndView("/error");
         logger.warn("Some message", e);
         modelAndView.addObject("message", "Some problem with database, please, try later");

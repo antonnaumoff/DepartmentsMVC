@@ -40,7 +40,7 @@ public class EmployeeController {
         return "employeeList";
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
     @RequestMapping("/employeeFormHandlerForCreation.html")
     public String initEmployeeFormForCreation(@RequestParam("id_dep") Integer id_dep, ModelMap model) {
         EmployeeForm employeeForm = new EmployeeForm();
@@ -82,7 +82,7 @@ public class EmployeeController {
             return "employeeForm";
         }
     }
-
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/edit.html", method = RequestMethod.POST)
     public String editEmployee(ModelMap model, EmployeeForm employeeForm, BindingResult result) throws Exception {
         Integer id = employeeForm.getId();
