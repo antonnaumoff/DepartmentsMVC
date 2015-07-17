@@ -22,20 +22,22 @@
         <!--</security:session-management>-->
     </security:http>
 
+    <security:user-service id="userService">
+    <security:user name="admin" password="8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918" authorities="ROLE_ADMIN"/>
+    <security:user name="user1" password="04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb" authorities="ROLE_USER"/>
+    <security:user name="user2" password="0a041b9462caa4a31bac3567e0b6e6fd9100787db2ab433d96f6d178cabfce90" authorities="ROLE_USER"/>
+    </security:user-service>
+
     <security:authentication-manager>
         <!--<security:authentication-provider user-service-ref="userService"/>-->
         <security:authentication-provider>
             <security:password-encoder hash="sha-256"/>
-            <security:user-service id="userService">
-                <security:user name="admin" password="8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918" authorities="ROLE_ADMIN"/>
-                <security:user name="user1" password="04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb" authorities="ROLE_USER"/>
-                <security:user name="user2" password="0a041b9462caa4a31bac3567e0b6e6fd9100787db2ab433d96f6d178cabfce90" authorities="ROLE_USER"/>
-            </security:user-service>
-            <!--<security:jdbc-user-service data-source-ref="myDataSource"-->
 
-                                        <!--authorities-by-username-query="select username, role from user_roles where username =?  "-->
+            <security:jdbc-user-service data-source-ref="myDataSource"
 
-                                        <!--users-by-username-query="select username,password, enabled from users where username=?"/>-->
+                                        authorities-by-username-query="select username, role from user_roles where username =?  "
+
+                                        users-by-username-query="select username,password, enabled from users where username=?"/>
         </security:authentication-provider>
     </security:authentication-manager>
 

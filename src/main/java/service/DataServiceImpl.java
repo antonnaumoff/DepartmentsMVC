@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,6 +45,7 @@ public class DataServiceImpl implements DataService {
     }
 
     @Override
+    @Secured("ROLE_ADMIN")
     @Caching(evict = {@CacheEvict(value = "departments", allEntries = true), @CacheEvict(value = "department", key="#id")})
     public void deleteDepartment(int id) throws DataBaseException {
         departmentRepository.deleteDepartment(id);
@@ -70,6 +72,7 @@ public class DataServiceImpl implements DataService {
     }
 
     @Override
+    @Secured("ROLE_ADMIN")
     @Caching(evict = {@CacheEvict(value = "employees", allEntries = true), @CacheEvict(value = "employee", key="#id")})
     public void deleteById(int id) throws DataBaseException {
         employeeRepository.deleteById(id);
