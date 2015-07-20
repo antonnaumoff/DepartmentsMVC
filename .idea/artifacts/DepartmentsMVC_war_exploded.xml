@@ -7,6 +7,29 @@
           <element id="module-output" name="DepartmentsMVC" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.codehaus.mojo:sonar-maven-plugin:2.6" />
+          <element id="library" level="project" name="Maven: org.apache.maven.shared:maven-dependency-tree:2.1" />
+          <element id="library" level="project" name="Maven: org.apache.maven:maven-project:2.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.maven:maven-settings:2.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.maven:maven-profile:2.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.maven:maven-model:2.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.maven:maven-artifact-manager:2.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.maven:maven-repository-metadata:2.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.maven.wagon:wagon-provider-api:1.0-beta-6" />
+          <element id="library" level="project" name="Maven: backport-util-concurrent:backport-util-concurrent:3.1" />
+          <element id="library" level="project" name="Maven: org.apache.maven:maven-plugin-registry:2.2.0" />
+          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-interpolation:1.11" />
+          <element id="library" level="project" name="Maven: org.apache.maven:maven-artifact:2.2.0" />
+          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-container-default:1.0-alpha-9-stable-1" />
+          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-component-annotations:1.5.5" />
+          <element id="library" level="project" name="Maven: org.eclipse.aether:aether-util:0.9.0.M2" />
+          <element id="library" level="project" name="Maven: org.sonatype.plexus:plexus-sec-dispatcher:1.4" />
+          <element id="library" level="project" name="Maven: org.codehaus.plexus:plexus-utils:1.5.5" />
+          <element id="library" level="project" name="Maven: org.sonatype.plexus:plexus-cipher:1.4" />
+          <element id="library" level="project" name="Maven: org.codehaus.sonar.runner:sonar-runner-api:2.4" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:10.0.1" />
+          <element id="library" level="project" name="Maven: com.google.code.findbugs:jsr305:2.0.3" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.34" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.0.1" />
