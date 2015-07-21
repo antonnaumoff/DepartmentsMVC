@@ -4,6 +4,7 @@
 
 <html ng-app="myApp">
 <head>
+    <script data-main="scripts/main" src="scripts/require.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script type="application/javascript"
             src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
