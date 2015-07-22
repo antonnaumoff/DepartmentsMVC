@@ -13,57 +13,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/.idea/sqldialects.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/DepartmentsMVC.iml">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/pom.xml">
+        <entry key="$PROJECT_DIR$/bowerrc.json">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/Calculate.java">
+        <entry key="$PROJECT_DIR$/src/bower.json">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/models/Department.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/models/Employee.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/repository/impl/jdbc/JDBCDepartmentRepository.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/repository/impl/jdbc/JDBCEmployeeRepository.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/service/DataServiceImpl.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/web/DepartmentController.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/java/web/EmployeeController.java">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+        <entry key="$PROJECT_DIR$/src/main/java/bower.json">
           <value>
             <set />
           </value>
@@ -73,32 +43,67 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/main/resources/spring-security.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/ehcache.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/test/java/CalculateTest.java">
+        <entry key="$PROJECT_DIR$/src/main/webapp/login.jsp">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/src/test/java/TestDepartmentController.java">
+        <entry key="$PROJECT_DIR$/src/main/webapp/scripts/main-built.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/scripts/main.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/scripts/one.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/scripts/three.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/scripts/two.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/socket.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DepartmentsMVCAngular/src/main/webapp/WEB-INF/views/loginPage.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DepartmentsMVCAngular/src/main/webapp/scripts/lib/util.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../DepartmentsMVCAngular/src/main/webapp/scripts/main.js">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/javascripts/aim-chat/controllers/ProfileConfigController.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/javascripts/aim-chat/controllers/RoomController.js">
           <value>
             <set />
           </value>
@@ -133,12 +138,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/javascripts/aim-chat/templates/browse-rooms.tpl.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/javascripts/aim-chat/templates/chat-history-messages.tpl.html">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/javascripts/aim-chat/templates/profile-editing.tpl.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/stylesheets/main.css">
           <value>
             <set />
           </value>

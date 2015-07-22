@@ -6,6 +6,7 @@
     <title>LOGIN</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="<c:url value="/css/my.css"/>" type="text/css">
+    <script rel="script" href="<c:url value="scripts/main-built.js"/>" type="text/css"></script>
 </head>
 
 <body onload='document.f.j_username.focus();'>
@@ -34,7 +35,7 @@
                             <input type="password" class="form-control" name="j_password" id="password"/>
                         </div>
                         <div class="form-group">
-                            <label for="remember_me" class="inline" >Remember me</label>
+                            <label for="remember_me" class="inline">Remember me</label>
                             <input type="checkbox" name="_spring_security_remember_me" id="remember_me"/>
                         </div>
 
