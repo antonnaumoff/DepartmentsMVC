@@ -6,7 +6,7 @@
     <title>LOGIN</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="<c:url value="/css/my.css"/>" type="text/css">
-    <script rel="script" href="<c:url value="scripts/main-built.js"/>" type="text/css"></script>
+
 </head>
 
 <body onload='document.f.j_username.focus();'>

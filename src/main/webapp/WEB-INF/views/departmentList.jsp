@@ -92,6 +92,9 @@
             <form action="/logout">
                 <button type="submit" class="btn btn-primary">Logout ${loginId}</button>
             </form>
+            <form action="/socket.html">
+                <button type="submit" class="btn btn-primary">Go To Socket!</button>
+            </form>
         </div>
 
     </div>

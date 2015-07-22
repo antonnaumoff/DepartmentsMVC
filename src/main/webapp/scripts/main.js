@@ -1,8 +1,8 @@
 requirejs.config({
     paths: {
-        'one': '../scripts/one',
-        'two': '../scripts/two',
-        'three': '../scripts/three'
+        one: '../scripts/one',
+        two: '../scripts/two',
+        three: '../scripts/three'
     }
 });
 
