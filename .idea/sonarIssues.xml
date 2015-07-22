@@ -168,6 +168,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/javascripts/aim-chat/services/SendMessageService.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/javascripts/aim-chat/services/WebSocketService.js">
           <value>
             <set />
