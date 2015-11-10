@@ -16,7 +16,7 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.spri
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-       <property name="prefix" value="/WEB-INF/views/"/>
+       <property name="prefix" value="/public/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
