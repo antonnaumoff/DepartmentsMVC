@@ -4,16 +4,11 @@
 
 <html ng-app="myApp">
 <head>
-    <script data-main="scripts/main" src="scripts/require.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-    <script type="application/javascript"
-            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
-    <script src="/angular/angular-route.js"></script>
-    <script src="/angular/lodash.js"></script>
-    <script src="/angular/restangular.js"></script>
-    <script src="/angular/controllers.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<c:url value="/css/my.css"/>" type="text/css">
+    <%--<script type="application/javascript" src="public/dev/app.min.js"></script>--%>
+    <%--<script src="../../public/js/app.js"></script>--%>
+
+    <script type="application/javascript" src="public/dev/app.min.js"></script>
+    <link rel="stylesheet" href="public/dev/main.css"/>
 
     <title>Welcome!</title>
 </head>
