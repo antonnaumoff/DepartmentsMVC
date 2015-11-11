@@ -12,12 +12,12 @@ myApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: "template/employeeList.html",
             controller: 'EmployeeListController'
         }).when('/logout', {
-            templateUrl: "/template/loginForm.html"
+        templateUrl: "/template/loginForm.html"
 
-        }).when('/restPractices', {
-            templateUrl: "template/restPractices.html",
-            controller: "RESTController"
-        })
+    }).when('/restPractices', {
+        templateUrl: "template/restPractices.html",
+        controller: "RESTController"
+    })
 }]);
 
 myApp.controller("MainController", ['$scope', '$http', '$location', '$log', function ($scope, $http, $location, logger) {
@@ -57,8 +57,8 @@ myApp.controller("MainController", ['$scope', '$http', '$location', '$log', func
                     }
                 }
             }).error(function () {
-                alert("server is under reconstruction, try later");
-            });
+            alert("server is under reconstruction, try later");
+        });
     };
 
     $scope.logout = function () {
@@ -79,8 +79,8 @@ myApp.controller("DepartmentListController", ['$scope', '$http', '$location', '$
                 $scope.departments = data;
             }
         }).error(function () {
-            alert("server is under reconstruction, try later");
-        });
+        alert("server is under reconstruction, try later");
+    });
 
     $scope.employeeList = function (dep_id) {
         $rootScope.dep_id = dep_id;
@@ -212,8 +212,6 @@ myApp.controller("RESTController", ['$scope', '$http', '$location', '$rootScope'
     $scope.edit = function () {
         return DepartmentService.edit($scope.id, $scope.title);
     }
-
-
 }]);
 
 

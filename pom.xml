@@ -191,7 +191,7 @@
                     </execution>
 
                     <execution>
-                        <id>gulp-concat</id>
+                        <id>gulp-min-app-css-concat</id>
                         <goals>
                             <goal>gulp</goal>
                         </goals>
@@ -201,11 +201,30 @@
                         </configuration>
                     </execution>
 
+                    <execution>
+                        <id>gulp-js-concat-inject</id>
+                        <goals>
+                            <goal>gulp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <arguments>default2</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>gulp-clean</id>
+                        <goals>
+                            <goal>gulp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <arguments>clean</arguments>
+                        </configuration>
+                    </execution>
+
                 </executions>
-
-
             </plugin>
-
         </plugins>
     </build>
 

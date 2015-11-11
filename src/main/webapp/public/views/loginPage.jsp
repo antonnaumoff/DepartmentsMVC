@@ -5,14 +5,16 @@
 <html ng-app="myApp">
 <head>
 
-    <link rel="stylesheet" href="../public/dev/main.css"/>
-
     <!-- inject:css -->
-    <%--<link rel="stylesheet" href="../dev/main.css">--%>
+
+    <link rel="stylesheet" href="/public/dev/main.css">
+
     <!-- endinject -->
 
     <!-- inject:js -->
-    <script src="../dev/app.min.js"></script>
+
+    <script src="/public/dev/app.min.js"></script>
+
     <!-- endinject -->
 
     <title>Welcome!</title>
