@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DepartmentsMVC.iml" filepath="$PROJECT_DIR$/DepartmentsMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DepartmentsMVCAngularTypescript.iml" filepath="$PROJECT_DIR$/DepartmentsMVCAngularTypescript.iml" />
     </modules>
   </component>
 </project>

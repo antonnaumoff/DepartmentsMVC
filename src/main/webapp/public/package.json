@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "compile": "tsc --out temp/app.js js/ts/all.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "bower-install": "bower install"
   },
@@ -26,6 +27,9 @@
     "gulp-concat-css": "~2.2.0",
     "gulp-load-plugins": "~1.1.0",
     "gulp-inject": "~3.0.0",
-    "gulp-clean": "~0.3.1"
+    "gulp-clean": "~0.3.1",
+    "typescript": "~1.6.2",
+    "gulp-tsc": "~1.1.4",
+    "dtsm": "~0.13.0"
   }
 }

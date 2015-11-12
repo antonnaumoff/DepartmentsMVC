@@ -24,10 +24,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="DepartmentsMVC" />
+        <module name="DepartmentsMVCAngularTypescript" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DepartmentsMVC" target="1.5" />
+      <module name="DepartmentsMVCAngularTypescript" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

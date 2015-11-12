@@ -11,12 +11,12 @@ var plugins = require('gulp-load-plugins')({
 var paths = {
     app: ['js/app.js'],
     scripts: [
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/angular/angular.min.js',
-        'bower_components/angular-route/angular-route.min.js',
-        'bower_components/restangular/dist/restangular.min.js',
-        'bower_components/lodash/lodash.min.js',
-        'temp/app.min.js'
+        'bower_components/jquery/dist/jquery.js',
+        'bower_components/angular/angular.js',
+        'bower_components/angular-ui-router/release/angular-ui-router.js',
+        'bower_components/restangular/dist/restangular.js',
+        'bower_components/lodash/lodash.js',
+        'temp/app.js'
     ],
     styles: [
         'bower_components/bootstrap/dist/css/bootstrap.css',
@@ -27,8 +27,8 @@ var paths = {
     distDev: 'dev'
 };
 
-gulp.task('default', ['minify-app', 'concat-css']);
-gulp.task('default2', ['concat-js', 'inject']);
+gulp.task('default', ['concat-css','concat-js-dev', 'inject-dev']);
+//gulp.task('default2', ['concat-js-dev', 'inject-dev']);
 
 gulp.task('minify-app', function () {
     gulp.src('js/app.js')
@@ -43,15 +43,23 @@ gulp.task('concat-css', function () {
         .pipe(gulp.dest(paths.distDev));
 });
 
-gulp.task('concat-js', function () {
+gulp.task('compile', function () {
+    gulp.src(['js/ts/all.ts'])
+        .pipe(plugins.tsc())
+        //.pipe(plugins.uglify())
+        .pipe(plugins.rename('app.min.js'))
+        .pipe(gulp.dest(paths.temp));
+});
+
+gulp.task('concat-js-dev', function () {
     gulp.src(paths.scripts)
-        .pipe(plugins.concat('app.min.js'))
+        .pipe(plugins.concat('app.js'))
         .pipe(gulp.dest(paths.distDev));
 });
 
-gulp.task('inject', function () {
+gulp.task('inject-dev', function () {
     gulp.src('views/loginPage.jsp')
-        .pipe(plugins.inject(gulp.src(['dev/app.min.js', 'dev/main.css'], {read: false}), {addPrefix: 'public'}))
+        .pipe(plugins.inject(gulp.src(['dev/app.js', 'dev/main.css'], {read: false}), {addPrefix: 'public'}))
         .pipe(gulp.dest(paths.views));
 });
 
@@ -61,8 +69,9 @@ gulp.task('clean', function () {
 });
 
 gulp.task('watch', function () {
-
     gulp.watch('js/app.js', ['minify-app']);
     gulp.watch(paths.styles, ['concat-css']);
     gulp.watch(paths.scripts, ['concat-js']);
 });
+
+

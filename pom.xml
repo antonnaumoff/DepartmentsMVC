@@ -8,7 +8,7 @@
     <artifactId>DepartmentsMVC</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Departments MVC Maven Webapp</name>
+    <name>Departments MVC Angular Typescript</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -191,7 +191,18 @@
                     </execution>
 
                     <execution>
-                        <id>gulp-min-app-css-concat</id>
+                        <id>npm compile ts</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <arguments>run compile</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>build-dev</id>
                         <goals>
                             <goal>gulp</goal>
                         </goals>
@@ -201,27 +212,27 @@
                         </configuration>
                     </execution>
 
-                    <execution>
-                        <id>gulp-js-concat-inject</id>
-                        <goals>
-                            <goal>gulp</goal>
-                        </goals>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <arguments>default2</arguments>
-                        </configuration>
-                    </execution>
+                    <!--<execution>-->
+                        <!--<id>start2-gulp-js-concat-inject</id>-->
+                        <!--<goals>-->
+                            <!--<goal>gulp</goal>-->
+                        <!--</goals>-->
+                        <!--<phase>generate-sources</phase>-->
+                        <!--<configuration>-->
+                            <!--<arguments>default2</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
 
-                    <execution>
-                        <id>gulp-clean</id>
-                        <goals>
-                            <goal>gulp</goal>
-                        </goals>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <arguments>clean</arguments>
-                        </configuration>
-                    </execution>
+                    <!--<execution>-->
+                        <!--<id>start3-gulp-clean</id>-->
+                        <!--<goals>-->
+                            <!--<goal>gulp</goal>-->
+                        <!--</goals>-->
+                        <!--<phase>generate-sources</phase>-->
+                        <!--<configuration>-->
+                            <!--<arguments>clean</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
 
                 </executions>
             </plugin>
