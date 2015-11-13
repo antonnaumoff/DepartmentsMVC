@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc --out temp/app.js js/ts/all.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "bower-install": "bower install"
+    "dtsm": "dtsm install"
   },
   "repository": {
     "type": "git",
@@ -18,9 +17,10 @@
     "url": "https://github.com/antonnaumoff/spring-boot-basic/issues"
   },
   "devDependencies": {
+    "bower": "~1.6.5",
+    "dtsm": "~0.13.0",
     "gulp": "~3.9.0",
     "gulp-concat": "~2.6.0",
-    "bower": "~1.6.5",
     "gulp-jsmin": "~0.1.5",
     "gulp-rename": "~1.2.2",
     "gulp-uglify": "~1.4.2",
@@ -28,8 +28,8 @@
     "gulp-load-plugins": "~1.1.0",
     "gulp-inject": "~3.0.0",
     "gulp-clean": "~0.3.1",
-    "typescript": "~1.6.2",
     "gulp-tsc": "~1.1.4",
-    "dtsm": "~0.13.0"
+    "gulp-typescript": "~2.9.2",
+    "gulp-sourcemaps": "~1.6.0"
   }
 }

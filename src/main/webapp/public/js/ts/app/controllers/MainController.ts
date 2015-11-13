@@ -3,14 +3,13 @@
 module myApp {
 
     import IHttpService = angular.IHttpService;
-    import ILocationService = angular.ILocationService;
     import ILogService = angular.ILogService;
     import IScope = angular.IScope;
-    import IState = angular.ui.IState;
+    import IStateService = ng.ui.IStateService;
 
     export interface User {
-        email: string;
-        pass: string;
+        username: string;
+        password: string;
     }
 
     export interface Message {
@@ -19,16 +18,15 @@ module myApp {
 
     export class MainController {
 
-        static $inject = ['$scope', '$http', '$location', '$log'];
+        static $inject = ['$http', '$state', '$log'];
 
-        public user:User = {email: null, pass: null};
+        public user:User = {username: null, password: null};
         public permission = {};
         public errors = {};
         public message:Message = {string: ""};
 
-        constructor(private $scope:IScope,
-                    private $http:IHttpService,
-                    private $state:any,
+        constructor(private $http:IHttpService,
+                    private $state:IStateService,
                     private $log:ILogService) {
 
             $log.debug('Hello from TypeScriptApp!!!');
@@ -48,28 +46,18 @@ module myApp {
                             this.permission = data[1];
                             $(".container").remove();
                             this.$state.go('main.departments');
-                            //TODO hide form /load department list
-                        } else {
-                            if (data[0] === "login success") {
-                                /*data[1] - permissions, */
-                                this.permission = data[1];
-                                $(".container").remove();
-                                this.$state.go('main.departments');
-                                //TODO hide form /load department list
-                            } else {
-                                /*data[0] - "validation failed" , data[1] - errors*/
-                            }
                         }
                     }
                 })
                 .error(()=> {
                     alert("server is under reconstruction, try later");
                 });
+
         };
 
         public logout():void {
             this.permission = {};
-            this.$state.go('main');
+            this.$state.go('main.login');
         };
 
         private clean():void {

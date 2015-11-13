@@ -11,34 +11,48 @@ module myApp {
 
         private init():void {
             this.$stateProvider.state('main', RouterConfig.mainState());
+            this.$stateProvider.state('main.login', RouterConfig.loginState());
             this.$stateProvider.state('main.departments', RouterConfig.departmentsState());
             this.$stateProvider.state('main.employee', RouterConfig.employeeState());
-            this.$urlRouterProvider.otherwise('/');
+            this.$urlRouterProvider.otherwise('/login');
         }
 
         private static mainState():ng.ui.IState {
             return {
-                url: '/',
-                templateUrl: '/template/loginForm.html',
+                abstract: true,
+                templateUrl: '/template/index.html',
                 controller: 'MainController as main'
             }
         }
 
+        private static loginState():ng.ui.IState {
+            return {
+                url: '/login',
+                templateUrl: '/template/loginForm.html'
+            }
+        }
 
         private static departmentsState():ng.ui.IState {
             return {
                 url: '/departmentList',
                 templateUrl: '/template/departmentList.html',
-                controller: 'DepartmentListController as dep'
+                controller: 'DepartmentListController as dep',
+                resolve: {
+                    departments: ['DepartmentService', departmentService => departmentService.getDepartments()]
+                }
             }
         }
 
         private static employeeState():ng.ui.IState {
             return {
-                url: '/employeeList',
+                url: '/employeeList/:dep_id',
                 templateUrl: '/template/employeeList.html',
                 controller: 'EmployeeListController as emp',
-
+                resolve: {
+                    employees: ['EmployeeService', '$stateParams', (employeeService, $stateParams) => {
+                        return employeeService.getEmployees($stateParams.dep_id);
+                    }]
+                }
             }
         }
     }

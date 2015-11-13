@@ -6,8 +6,7 @@ module myApp {
 
         constructor(private $state:any) {
 
-                this.$state.go('main');
-
+            this.$state.go('main.login');
         }
     }
 }

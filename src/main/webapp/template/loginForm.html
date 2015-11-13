@@ -14,7 +14,7 @@
                             <div class="form-group">
                                 <label for="userName">Username:</label>
                                 <input type="text" class="form-control" id="userName" name="username"
-                                       ng-model="user.username" required ng-minlength="5"/>
+                                       ng-model="main.user.username" required ng-minlength="5"/>
                                 <span ng-show="loginform.username.$error.required">Required</span>
                                 <span ng-show="loginform.username.$error.minlength">min 5 chars</span>
                                 <span class="alarma">{{errors.username}}</span>
@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <label for="password">Password:</label>
                                 <input type="password" class="form-control" id="password" name="password"
-                                       ng-model="user.password" required ng-minlength="5"/>
+                                       ng-model="main.user.password" required ng-minlength="5"/>
                                 <span ng-show="loginform.username.$error.required">Required</span>
                                 <span ng-show="loginform.password.$error.minlength">min 5 chars</span>
                                 <span class="alarma">{{errors.password}}</span>

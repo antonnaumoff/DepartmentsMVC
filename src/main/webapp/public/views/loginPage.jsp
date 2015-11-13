@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div id="main" ui-view></div>
+<div ui-view></div>
 <!-- inject:js -->
 
 <script src="/public/dev/app.js"></script>
@@ -21,5 +21,7 @@
 
 <script type="text/javascript">angular.bootstrap(document, ['myApp']);</script>
 
+
 </body>
 </html>
+

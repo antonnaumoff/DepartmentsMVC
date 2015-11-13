@@ -11,5 +11,7 @@ module myApp {
         .controller('MainController', MainController)
         .controller('DepartmentListController', DepartmentListController)
         .controller('EmployeeListController', EmployeeListController)
+        .service('DepartmentService', DepartmentService)
+        .service('EmployeeService', EmployeeService)
         .run(RunApp);
 }

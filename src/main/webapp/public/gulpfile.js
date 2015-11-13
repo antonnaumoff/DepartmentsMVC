@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var clean = require('gulp-clean');
+var ts = require('gulp-typescript');
+var sourcemaps = require('gulp-sourcemaps');
 
 var plugins = require('gulp-load-plugins')({
     rename: {
@@ -22,42 +24,40 @@ var paths = {
         'bower_components/bootstrap/dist/css/bootstrap.css',
         'css/my.css'
     ],
+    ts: [
+        'js/ts/*.ts', 'js/ts/app/*.ts', 'js/ts/app/*/*.ts'
+    ],
     views: 'views',
     temp: 'temp',
     distDev: 'dev'
 };
 
-gulp.task('default', ['concat-css','concat-js-dev', 'inject-dev']);
-//gulp.task('default2', ['concat-js-dev', 'inject-dev']);
+//plugins.run('npm run compile').exec();
 
-gulp.task('minify-app', function () {
-    gulp.src('js/app.js')
-        .pipe(plugins.uglify())
-        .pipe(plugins.rename('app.min.js'))
-        .pipe(gulp.dest('temp'));
+gulp.task('compile', function () {
+    return gulp.src(paths.ts)
+        .pipe(sourcemaps.init())
+        .pipe(ts({
+            out: 'app.js'
+        }))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.temp));
 });
 
-gulp.task('concat-css', function () {
+gulp.task('concat-css', ['compile'], function () {
     gulp.src(paths.styles)
         .pipe(plugins.concatcss("main.css"))
         .pipe(gulp.dest(paths.distDev));
 });
 
-gulp.task('compile', function () {
-    gulp.src(['js/ts/all.ts'])
-        .pipe(plugins.tsc())
-        //.pipe(plugins.uglify())
-        .pipe(plugins.rename('app.min.js'))
-        .pipe(gulp.dest(paths.temp));
-});
 
-gulp.task('concat-js-dev', function () {
+gulp.task('concat-js-dev', ['concat-css'], function () {
     gulp.src(paths.scripts)
         .pipe(plugins.concat('app.js'))
         .pipe(gulp.dest(paths.distDev));
 });
 
-gulp.task('inject-dev', function () {
+gulp.task('inject-dev', ['concat-js-dev'], function () {
     gulp.src('views/loginPage.jsp')
         .pipe(plugins.inject(gulp.src(['dev/app.js', 'dev/main.css'], {read: false}), {addPrefix: 'public'}))
         .pipe(gulp.dest(paths.views));
@@ -69,9 +69,12 @@ gulp.task('clean', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('js/app.js', ['minify-app']);
+    gulp.watch(paths.ts, ['inject-dev']);
     gulp.watch(paths.styles, ['concat-css']);
-    gulp.watch(paths.scripts, ['concat-js']);
+    gulp.watch(paths.scripts, ['concat-js-dev']);
 });
+
+
+
 
 

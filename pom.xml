@@ -180,7 +180,7 @@
                     </execution>
 
                     <execution>
-                        <id>npm bower-install</id>
+                        <id>npm bower</id>
                         <goals>
                             <goal>bower</goal>
                         </goals>
@@ -191,13 +191,13 @@
                     </execution>
 
                     <execution>
-                        <id>npm compile ts</id>
+                        <id>npm dtsm</id>
                         <goals>
                             <goal>npm</goal>
                         </goals>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <arguments>run compile</arguments>
+                            <arguments>run dtsm</arguments>
                         </configuration>
                     </execution>
 
@@ -208,31 +208,9 @@
                         </goals>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <arguments>default</arguments>
+                            <arguments>inject-dev</arguments>
                         </configuration>
                     </execution>
-
-                    <!--<execution>-->
-                        <!--<id>start2-gulp-js-concat-inject</id>-->
-                        <!--<goals>-->
-                            <!--<goal>gulp</goal>-->
-                        <!--</goals>-->
-                        <!--<phase>generate-sources</phase>-->
-                        <!--<configuration>-->
-                            <!--<arguments>default2</arguments>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-
-                    <!--<execution>-->
-                        <!--<id>start3-gulp-clean</id>-->
-                        <!--<goals>-->
-                            <!--<goal>gulp</goal>-->
-                        <!--</goals>-->
-                        <!--<phase>generate-sources</phase>-->
-                        <!--<configuration>-->
-                            <!--<arguments>clean</arguments>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
 
                 </executions>
             </plugin>
