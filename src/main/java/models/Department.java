@@ -7,7 +7,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Department")
-
 public class Department implements Serializable {
 
     @Id

@@ -34,10 +34,10 @@
                             <label for="password">Password:</label>
                             <input type="password" class="form-control" name="j_password" id="password"/>
                         </div>
-                        <div class="form-group">
-                            <label for="remember_me" class="inline">Remember me</label>
-                            <input type="checkbox" name="_spring_security_remember_me" id="remember_me"/>
-                        </div>
+                        <%--<div class="form-group">--%>
+                            <%--<label for="remember_me" class="inline">Remember me</label>--%>
+                            <%--<input type="checkbox" name="_spring_security_remember_me" id="remember_me"/>--%>
+                        <%--</div>--%>
 
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Submit</button>

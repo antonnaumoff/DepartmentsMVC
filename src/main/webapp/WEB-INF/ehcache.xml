@@ -6,7 +6,10 @@
            timeToIdleSeconds="300"
            overflowToDisk="true"
            maxElementsOnDisk="1000000"
-           memoryStoreEvictionPolicy="LRU"/>
+           memoryStoreEvictionPolicy="LRU">
+        <sizeOfPolicy maxDepth="100000"/>
+    </cache>
+
 
     <cache name="employees"
            maxBytesLocalHeap="40M"
@@ -16,7 +19,9 @@
            maxEntriesLocalDisk="1000000"
            diskPersistent="false"
            diskExpiryThreadIntervalSeconds="120"
-           memoryStoreEvictionPolicy="LRU"/>
+           memoryStoreEvictionPolicy="LRU">
+        <sizeOfPolicy maxDepth="100000"/>
+    </cache>
 
     <cache name="department"
            maxBytesLocalHeap="100M"
@@ -24,7 +29,9 @@
            timeToIdleSeconds="300"
            overflowToDisk="true"
            maxElementsOnDisk="1000"
-           memoryStoreEvictionPolicy="LRU"/>
+           memoryStoreEvictionPolicy="LRU">
+        <sizeOfPolicy maxDepth="100000"/>
+    </cache>
 
     <cache name="employee"
            maxBytesLocalHeap="40M"
@@ -34,6 +41,7 @@
            maxEntriesLocalDisk="1000"
            diskPersistent="false"
            diskExpiryThreadIntervalSeconds="120"
-           memoryStoreEvictionPolicy="LRU"/>
-
+           memoryStoreEvictionPolicy="LRU">
+        <sizeOfPolicy maxDepth="100000"/>
+    </cache>
 </ehcache>

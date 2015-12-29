@@ -26,5 +26,8 @@
         <module name="DepartmentsMVC" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DepartmentsMVC" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

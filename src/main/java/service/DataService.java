@@ -2,6 +2,7 @@ package service;
 
 import models.Department;
 import models.Employee;
+import utils.exceptions.CustomException;
 import utils.exceptions.DataBaseException;
 
 import java.util.List;
@@ -29,5 +30,7 @@ public interface DataService {
     void editEmployee(Employee emp) throws DataBaseException;
 
     Integer getId_dById(Integer id) throws DataBaseException;
+
+    void throwException() throws CustomException;
 
 }

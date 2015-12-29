@@ -70,7 +70,7 @@ public class HibernateDepartmentRepository implements DepartmentRepository {
             Session session = sessionFactory.getCurrentSession();
             String hql = "UPDATE Department SET title =:test WHERE department_id =:id";
             Query q = session.createQuery(hql);
-            q.setParameter("test", test);
+            q.setParameter("src/main/test", test);
             q.setParameter("id", id);
             q.executeUpdate();
 

@@ -12,8 +12,10 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.ResourceTransactionManager;
 import repository.DepartmentRepository;
 import repository.EmployeeRepository;
+import utils.exceptions.CustomException;
 import utils.exceptions.DataBaseException;
 
 import java.util.List;
@@ -21,6 +23,9 @@ import java.util.List;
 @Component
 @Transactional(propagation = Propagation.REQUIRED)
 public class DataServiceImpl implements DataService {
+
+    @Autowired
+    private ResourceTransactionManager transactionManager;
 
     @Autowired
     @Qualifier("hibernateDepartmentRepository")
@@ -100,4 +105,12 @@ public class DataServiceImpl implements DataService {
     public Integer getId_dById(Integer id) throws DataBaseException {
         return employeeRepository.getId_dById(id);
     }
+
+    @Override
+    public void throwException() throws CustomException {
+
+        throw new CustomException();
+    }
+
+
 }

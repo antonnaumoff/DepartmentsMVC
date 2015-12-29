@@ -17,11 +17,12 @@ import utils.exceptions.DataBaseException;
 import utils.forms.DepartmentForm;
 import utils.validators.OvalFormValidator;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 
 @Controller
-@RequestMapping("/departments")
+@RequestMapping(value = "/departments")
 public class DepartmentController {
 
     private Logger logger = Logger.getLogger(this.getClass());
@@ -33,15 +34,16 @@ public class DepartmentController {
     private OvalFormValidator validator;
 
 
-    @RequestMapping(value = "/list.html", method = RequestMethod.GET)
-    public String initDepartmentList(ModelMap model) throws DataBaseException {
+
+    @RequestMapping(value = "/list.html", method = {RequestMethod.GET, RequestMethod.HEAD})
+    public String initDepartmentList(ModelMap model, HttpSession session) throws DataBaseException {
         List departments = dataService.getDepartmentList();
         model.put("department", departments);
         return "departmentList";
     }
 
     @RequestMapping("/departmentForm.html")
-    public String initDepartmentForm(ModelMap model) {
+    public String initDepartmentForm(ModelMap model, HttpSession session) {
         DepartmentForm depForm = new DepartmentForm();
         model.put("departmentForm", depForm);
         return "departmentForm";

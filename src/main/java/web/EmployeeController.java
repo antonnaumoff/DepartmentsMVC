@@ -8,7 +8,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import service.DataService;
 import utils.forms.EmployeeForm;
@@ -82,6 +85,7 @@ public class EmployeeController {
             return "employeeForm";
         }
     }
+
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/edit.html", method = RequestMethod.POST)
     public String editEmployee(ModelMap model, EmployeeForm employeeForm, BindingResult result) throws Exception {

@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../OPTIMA/provisioning2.0/optima-provisioning-monitoring/src/main/test/com/optima/action/TestStoricoAction.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.idea/sqldialects.xml">
           <value>
             <set />
@@ -43,12 +48,52 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/bower.json">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/bower.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/models/Department.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/models/Employee.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/service/DataService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/service/DataServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/utils/exceptions/CustomException.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/web/DepartmentController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/web/EmployeeController.java">
           <value>
             <set />
           </value>
@@ -63,7 +108,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/resources/ehcache.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/spring-security.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/WEB-INF/ehcache.xml">
           <value>
             <set />
           </value>
@@ -83,7 +148,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/js/socket.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/webapp/login.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/webapp/report">
           <value>
             <set />
           </value>
@@ -118,6 +193,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/CalculateTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/TestDepartmentController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../DepartmentsMVCAngular/src/main/webapp/WEB-INF/views/loginPage.jsp">
           <value>
             <set />
@@ -129,6 +214,111 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../DepartmentsMVCAngular/src/main/webapp/scripts/main.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Spring Integration Lab 1/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Spring Integration Lab 1/src/main/java/com/intertech/lab1/Startup.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Spring Integration Lab 1/src/main/resources/META_INF/spring/logger">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Spring Integration Lab 1/src/main/resources/META_INF/spring/si-components.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Spring Integration Lab 1/src/main/resources/si-components.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/Booking.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/BookingImpl1.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/GroovyMessenger.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/Messenger.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/Test.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/mes/Booking.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/mes/BookingImpl1.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/mes/GroovyMessenger.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/mes/Messenger.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/sun/reflect1/Booking.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/sun/reflect1/BookingImpl1.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/sun/reflect1/GroovyMessenger.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/sun/reflect1/HelloFromAsync.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/java/sun/reflect1/Messenger.groovy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Test/src/main/resources/spring-config.xml">
           <value>
             <set />
           </value>
@@ -149,6 +339,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/javascripts/aim-chat/directives/MessageParse.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/javascripts/aim-chat/directives/ScrollDirective.js">
           <value>
             <set />
           </value>
@@ -194,6 +389,151 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../aimprosoft-chat/grails-app/assets/stylesheets/main.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../integration/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../javamail-samples/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../optima-boot/.bowerrc">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../optima-boot/bower.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../optima-boot/src/main/resources/public/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../spring-ehcache-demo/sandbox.iml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Spring Examples/SpringRipper/src/main/java/quoters/InjectRandomIntAnnotationBeanPostProcessor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Spring Examples/pro-spring-3-master/ch20-batch/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Spring Examples/pro-spring-3-master/ch20-batch/src/main/java/com/apress/prospring3/ch20/ContactJobTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Spring Examples/pro-spring-3-master/ch20-batch/src/main/java/com/apress/prospring3/ch20/repository/ContactRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../Spring Examples/pro-spring-3-master/ch20-batch/src/main/resources/app-context.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/alternatives/mule-example/src/test/resources/muleexample-functional-test-config.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/alternatives/servicemix/camel-su/src/main/resources/camel-context.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/channels/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/channels/src/main/java/com/apress/prospringintegration/channels/directchannel/ProblemReporter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/channels/src/main/resources/direct-channel.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/channels/src/main/resources/executor-channel.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/channels/src/main/resources/messaging-template.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/channels/src/main/resources/priority-channel.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/channels/src/main/resources/queue-channel.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../apress-spring-integration-examples/endpoints-adapters/jmsgateway-examples/src/main/resources/gateway-jms-client.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../spring-integration-samples/applications/cafe/cafe-amqp/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/usr/lib/jvm/java-7-oracle/src.zip!/java/net/PlainSocketImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/usr/lib/jvm/java-7-oracle/src.zip!/java/sql/Connection.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/usr/lib/jvm/java-7-oracle/src.zip!/java/sql/DriverManager.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/usr/lib/jvm/java-7-oracle/src.zip!/java/sql/PreparedStatement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/usr/lib/jvm/java-7-oracle/src.zip!/java/sql/Statement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/usr/lib/jvm/java-7-oracle/src.zip!/java/sql/Timestamp.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/usr/lib/jvm/java-7-oracle/src.zip!/javax/sql/DataSource.java">
           <value>
             <set />
           </value>
