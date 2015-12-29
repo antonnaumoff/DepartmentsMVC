@@ -89,6 +89,11 @@ public class DepartmentController {
         }
     }
 
+    @RequestMapping(value = "/jqGridTestPage.html", method = RequestMethod.GET)
+    public String showJQGridTestPage(){
+        return "jqGridTestPage";
+    }
+
     private Department createDepartmentFromForm(DepartmentForm depForm) {
         Department dep = new Department();
         dep.setId(depForm.getId_dep());

@@ -95,6 +95,9 @@
             <form action="/socket.html">
                 <button type="submit" class="btn btn-primary">Go To Socket!</button>
             </form>
+            <form action="/departments/jqGridTestPage.html">
+                <button type="submit" class="btn btn-primary">Go jqGrid!!!</button>
+            </form>
         </div>
 
     </div>
